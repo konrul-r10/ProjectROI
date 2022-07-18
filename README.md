@@ -1,7 +1,8 @@
 # ProjectROI
 Detects cat bowl for food value. 
 
-MQTT % Siri (Apple) will be coded.
+MQTT & Siri (Apple) will be coded.
+web.py is to publish result to the web server
 
 
 Works with PyCharm 2021 Community edition under Win 10 OS.
