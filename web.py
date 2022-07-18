@@ -4,7 +4,7 @@ import numpy as np
 
 app = Flask(__name__)
 
-cap = cv2.VideoCapture('http://xxx.xxx.xxx.xxx:xxxx')  # use 0 for web camera
+cap = cv2.VideoCapture('http://XXX.XXX.XXX.XXX:XXXX')  # use 0 for web camera
 #  for cctv camera use rtsp://username:password@ip_address:554/user=username_password='password'_channel=channel_number_stream=0.sdp' instead of camera
 # for local webcam use cv2.VideoCapture(0)
 
@@ -71,15 +71,15 @@ def gen_frames():  # generate frame by frame from camera
                     cv2.rectangle(frame, (280, 505), (230, 535), (0, 0, 255), 2)
                     cv2.putText(frame, "yellow", (280, 495), cv2.FONT_HERSHEY_COMPLEX, 1, (255, 255, 0), 2)
 
-                cv2.imshow('frame', frame)
+                #cv2.imshow('frame', frame)
                 red_blur = cv2.resize(red_blur, (300, 200))
                 green_blur = cv2.resize(green_blur, (300, 200))
                 yellow_blur = cv2.resize(yellow_blur, (300, 200))
 
-                cv2.imshow('red_window', red_blur)
-                cv2.imshow('green_window', green_blur)
-                cv2.imshow('yellow_window', yellow_blur)
-                cv2.imshow('deneme', hsv)
+                #cv2.imshow('red_window', red_blur)
+                #cv2.imshow('green_window', green_blur)
+                #cv2.imshow('yellow_window', yellow_blur)
+                #cv2.imshow('deneme', hsv)
                 ret, buffer = cv2.imencode('.jpg', frame)
                 frame = buffer.tobytes()
                 yield (b'--frame\r\n'
